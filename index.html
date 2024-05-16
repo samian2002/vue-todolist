@@ -10,14 +10,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        <h1>Lista di To-Do</h1>
-        <ul>
-            <li v-for="todo in todos" :key="todo">{{ todo }}</li>
+    <div id="app" class="container mt-5">
+        <h1 class="mb-4 text-center">Lista di To-Do</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <input type="text" v-model="newTodo" class="form-control mb-2" placeholder="Aggiungi un nuovo todo">
+                <button @click="addTodo" class="btn btn-primary w-100">Aggiungi</button>
+            </div>
+        </div>
+        <ul class="list-group mt-3">
+            <li v-for="todo in todos" :key="todo" class="list-group-item">{{ todo }}</li>
         </ul>
     </div>
     <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>
     <script src="./scripts/main.js"></script>
 </body>
-
 </html>
