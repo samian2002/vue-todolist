@@ -19,7 +19,10 @@
             </div>
         </div>
         <ul class="list-group mt-3">
-            <li v-for="todo in todos" :key="todo" class="list-group-item">{{ todo }}</li>
+            <li v-for="(todo, index) in todos" :key="index" class="list-group-item d-flex justify-content-between align-items-center">
+                {{ todo }}
+                <i class="fas fa-times text-danger" style="cursor: pointer;" @click="removeTodo(index)"></i> <!-- Icona di rimozione -->
+            </li>
         </ul>
     </div>
     <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>
